@@ -17,8 +17,6 @@ router.post("/", async (req, res) => {
     return res.status(400).json({ message: "Email and name are missing" });
 
   try {
-    const testAccount = await nodemailer.createTestAccount();
-
     const transporter = nodemailer.createTransport({
       host: "smtp-mail.outlook.com", // hostname
       secureConnection: false, // TLS requires secureConnection
@@ -32,7 +30,7 @@ router.post("/", async (req, res) => {
       },
     });
 
-    const info = await transporter.sendMail({
+    await transporter.sendMail({
       from: `"Email Submission" <${SENDER_USER}>`,
       to: `${EMAIL_TO}`,
       subject: "Contact Form Submission",
