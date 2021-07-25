@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
   const { email } = req.body;
 
   if (!email)
-    return res.status(400).json({ message: "Email and name are missing" });
+    return res.status(400).json({ message: "Email is a required field" });
 
   const regex = /^([a-zA-z0-9\.-_]+)@([a-zA-z0-9\-_]+).([a-z]{2,20})$/;
   const matches = email.match(regex) || [];
