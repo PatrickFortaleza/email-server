@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
   if (matches.length < 1)
     return res
       .status(400)
-      .json({ message: `you have not entered a valid email address` });
+      .json({ message: `You have not entered a valid email address` });
 
   try {
     const transporter = nodemailer.createTransport({
