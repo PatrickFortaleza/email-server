@@ -41,7 +41,7 @@ router.post("/", async (req, res) => {
     await transporter.sendMail({
       from: `"tropic bounce" <${SENDER_USER}>`,
       to: `${EMAIL_TO}`,
-      subject: "Subscription - Exclusive Content [tropicbounce.ca]",
+      subject: "Application - Volunteering [tropicbounce.ca]",
       text: `Email: ${email}`,
       html: `<p><b>Email: ${email}</b></p>`,
     });
